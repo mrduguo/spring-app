@@ -1,5 +1,7 @@
 package com.github.mrduguo.spring.app.config;
 
+import org.springframework.boot.context.config.RandomValuePropertySource;
+
 import java.lang.management.ManagementFactory;
 import java.net.InetAddress;
 import java.text.SimpleDateFormat;
@@ -18,6 +20,9 @@ public class EnvConfig {
             String activeProfiles = (classPath.matches(".*test.classes.*") || classPath.matches(".*classes.test.*")) ? "test"
                     : (classPath.matches(".*production.classes.*") || classPath.matches(".*classes.main.*")) ? "local"
                     : "server";
+            if(activeProfiles.equals("test")){
+                System.setProperty("server.port", Integer.toString((int )(Math.random() * 1024 + 11000)));
+            }
             try{
                 activeProfiles=activeProfiles+","+ InetAddress.getLocalHost().getHostName();
             }catch (Exception ignore){}
