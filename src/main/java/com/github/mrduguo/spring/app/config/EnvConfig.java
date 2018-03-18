@@ -15,7 +15,7 @@ public class EnvConfig {
     }
 
     private static void setupActiveProfile() {
-        if (System.getProperty("spring.profiles.active")!=null && System.getenv("SPRING_PROFILES_ACTIVE")!=null) {
+        if (System.getProperty("spring.profiles.active")==null && System.getenv("SPRING_PROFILES_ACTIVE")==null) {
             String classPath = System.getProperty("java.class.path");
             String activeProfiles = (classPath.matches(".*test.classes.*") || classPath.matches(".*classes.test.*")) ? "test"
                     : (classPath.matches(".*production.classes.*") || classPath.matches(".*classes.main.*")) ? "local"
