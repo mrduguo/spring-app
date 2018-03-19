@@ -18,22 +18,22 @@ import java.util.ArrayList;
 public class SwaggerConfig {
 
 
-    @Value("${app.project.name:}")
+    @Value("${api.name:}")
     String projectName;
 
-    @Value("${app.project.description:}")
+    @Value("${api.description:}")
     String projectDescription;
 
-    @Value("${app.project.version:}")
+    @Value("${api.version:}")
     String projectVersion;
 
-    @Value("${app.project.terms.url:}")
+    @Value("${api.terms.url:}")
     String projectTermsUrl;
 
-    @Value("${app.project.license.name:Apache License 2.0}")
+    @Value("${api.license.name:Apache License 2.0}")
     String projectLicenseName;
 
-    @Value("${app.project.license.url:http://www.apache.org/licenses/LICENSE-2.0}")
+    @Value("${api.license.url:http://www.apache.org/licenses/LICENSE-2.0}")
     String projectLicenseUrl;
 
 

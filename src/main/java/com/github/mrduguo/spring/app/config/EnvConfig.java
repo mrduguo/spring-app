@@ -1,6 +1,5 @@
 package com.github.mrduguo.spring.app.config;
 
-import org.springframework.boot.context.config.RandomValuePropertySource;
 
 import java.lang.management.ManagementFactory;
 import java.net.InetAddress;
